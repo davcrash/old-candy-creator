@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CandyCreator</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- JS -->
+    <script src="lib/jquery/jquery.min.js" type="text/javascript"></script>
+    <script
+      src="lib/bootstrap/js/bootstrap.min.js"
+      type="text/javascript"
+    ></script>
+    <script src="lib/fabric/fabric.min.js" type="text/javascript"></script>
+    <script
+      src="lib/fabric/customiseControls.min.js"
+      type="text/javascript"
+    ></script>
+    <script src="lib/alertify/alertify.min.js" type="text/javascript"></script>
+    <script
+      src="lib/sweetAlert/sweetalert.min.js"
+      type="text/javascript"
+    ></script>
+    <script src="lib/momentjs/moment.min.js" type="text/javascript"></script>
+    <script src="js/FuncionesJS.js" type="text/javascript"></script>
+    <script
+      src="lib/toogle/bootstrap-toggle.min.js"
+      type="text/javascript"
+    ></script>
+    <script src="lib/iconate/iconate.min.js" type="text/javascript"></script>
+    <script src="lib/tippyjs/tippy.min.js" type="text/javascript"></script>
+    <!-- CSS -->
+    <link href="img/favicon.ico" rel="shortcut icon" />
+    <link href="css/font.css" rel="stylesheet" type="text/css" />
+    <link
+      href="lib/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="lib/alertify/css/alertify.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="lib/alertify/css/themes/default.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="lib/sweetAlert/sweetalert.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="css/cssCandyCreator.css" rel="stylesheet" type="text/css" />
+    <link
+      href="lib/toogle/bootstrap-toggle.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="lib/animate-css/animate.min.css" rel="stylesheet" />
+    <link href="lib/iconate/iconate.min.css" rel="stylesheet" type="text/css" />
+    <link href="lib/tippyjs/tippy.css" rel="stylesheet" type="text/css" />
+    <!-- Main Stylesheet File -->
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-default navbar-fixed-top text-center"
+      style="background-color: #0f2d3d"
+    >
+      <div
+        class="centrado"
+        style="display: block; margin-left: auto; margin-right: auto"
+      >
+        <img alt="Brand" src="img/logo.svg" style="height: 30px" />
+        <span
+          style="
+            color: white;
+            font-size: 20px;
+            font-weight: 900;
+            vertical-align: middle;
+          "
+        >
+          CandyCreator
+        </span>
+      </div>
+    </nav>
+
+    <div class="container-fluid" style="height: 50vh">
+      <div class="row" style="height: 100%">
+        <!--Chocolatina-->
+        <div id="editorChocolate" class="col-sm-12" style="height: 100%">
+          <div
+            id="divContenedorChocolate"
+            class="centrado"
+            style="border: white"
+          >
+            <div class="centrado" id="loadereditor" align="center">
+              <img
+                class="img-responsive"
+                src="img/giphy-downsized.gif"
+                style="width: 20vmin; height: 20vmin"
+              />
+              <br />
+              <p style="font-size: 2.6vmin">
+                ¡Selecciona el tipo de Chocolate deseado!
+              </p>
+            </div>
+            <canvas id="c" hidden="true"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid" style="height: 30vh">
+      <div class="row" style="height: 100%">
+        <!--Panel-->
+        <div class="col-sm-12" style="height: 100%">
+          <h3 align="center" style="margin: 0px">
+            <b id="tituloPaso">Nuestros Sabores</b>
+          </h3>
+
+          <div class="tab-content">
+            <!------------------- INICIO: SELECCION DE CHOCOLATINA ------------------------------->
+            <div id="color">
+              <div class="selectchoco" align="center">
+                <!--INICIO: COLOR 1 DE CHOCOLATINA -->
+                <a
+                  class=""
+                  style="text-align: center; width: auto; height: 19vmin"
+                  data-url="img/choco_negro.jpg"
+                  onclick="escogerChocolate(this)"
+                  href="#"
+                >
+                  <div align="center">
+                    <img class="img-responsive" src="img/choco_negro.jpg" />
+                  </div>
+                  <div class="caption">
+                    <p style="font-size: 2.6vmin">Smooth Milk Chocolate</p>
+                  </div>
+                </a>
+                <!--FIN: COLOR 1 DE CHOCOLATINA -->
+
+                <!--INICIO: COLOR 2 DE CHOCOLATINA -->
+                <a
+                  class=""
+                  style="text-align: center; width: auto; height: 19vmin"
+                  data-url="img/choco_blanco.jpg"
+                  onclick="escogerChocolate(this)"
+                  href="#"
+                >
+                  <div align="center">
+                    <img class="img-responsive" src="img/choco_blanco.jpg" />
+                  </div>
+                  <div class="caption">
+                    <p style="font-size: 2.6vmin">Smooth White Chocolate</p>
+                  </div>
+                </a>
+                <!--FIN: COLOR 2 DE CHOCOLATINA -->
+
+                <div class="checkbox">
+                  <label style="font-size: 1.9vmin">
+                    ¿Deseas agregar un toque
+                    Dorado?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input
+                      type="checkbox"
+                      data-toggle="toggle"
+                      id="switchBtn"
+                      data-onstyle="warning"
+                      style="margin-left: 100px"
+                    />
+                  </label>
+                </div>
+              </div>
+            </div>
+            <!-------------------FIN: SELECCION DE CHOCOLATINA ------------------------------->
+
+            <!-------------------INICIO: SELECCION DE PREDISEÑOS ------------------------------->
+            <div id="diseños">
+              <div class="col-sm-2">
+                <br />
+                <select
+                  id="categoria"
+                  class="form-control"
+                  onchange="SeleccionarCategoria();"
+                >
+                  <option value="AmorAmistad" selected="true">
+                    Amor y Amistad
+                  </option>
+                  <option value="Aniversario">Aniversario</option>
+                  <option value="Cumpleanios">Cumpleaños</option>
+                  <option value="DiaMadre">Día de la Madre</option>
+                  <option value="DiaPadre">Día del Padre</option>
+                  <option value="Otros">Otros</option>
+                </select>
+              </div>
+
+              <div id="plantillas" class="col-sm-10">
+                <div
+                  id="divEmojis"
+                  class="selectchoco scroll col-sm-9"
+                  style="width: 100%"
+                >
+                  <div id="AmorAmistad" class="col-sm-12">
+                    <br />
+                  </div>
+
+                  <div hidden="true" id="Aniversario" class="col-sm-12">
+                    <br />
+                  </div>
+
+                  <div hidden="true" id="Cumpleanios" class="col-sm-12">
+                    <br />
+                  </div>
+
+                  <div hidden="true" id="DiaMadre" class="col-sm-12">
+                    <br />
+                  </div>
+
+                  <div hidden="true" id="DiaPadre" class="col-sm-12">
+                    <br />
+                  </div>
+
+                  <div hidden="true" id="Otros" class="col-sm-12">
+                    <br />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-------------------FIN: SELECCION DE PREDISEÑOS ------------------------------->
+
+            <div id="emojis" align="center" align="center" style="height: 100%">
+              <div class="col-sm-3">
+                <br />
+
+                <textarea
+                  id="textoInsertado"
+                  placeholder="Seleccione un texto para editarlo"
+                  disabled="true"
+                  style="
+                    width: 100%;
+                    height: 15vmin;
+                    resize: none;
+                    text-align: center;
+                  "
+                ></textarea>
+                <br />
+                <button
+                  class="btn btn-info"
+                  onclick="addText()"
+                  style="width: 100%"
+                >
+                  Insertar nuevo texto
+                </button>
+              </div>
+
+              <div align="center" style="height: 100%">
+                <br />
+                <div
+                  id="divEmojis"
+                  class="scrollmenu col-sm-9"
+                  align="center"
+                  style="height: 25vmin"
+                >
+                  <a
+                    href="#"
+                    data-emoji="img/emojis/001.svg"
+                    onclick="getEmoji(this)"
+                  >
+                    <img class="imgEmojis" src="img/emojis/001.svg" />
+                  </a>
+                  <a
+                    href="#"
+                    data-emoji="img/emojis/002.svg"
+                    onclick="getEmoji(this)"
+                  >
+                    <img class="imgEmojis" src="img/emojis/002.svg" />
+                  </a>
+                  <a
+                    href="#"
+                    data-emoji="img/emojis/003.svg"
+                    onclick="getEmoji(this)"
+                  >
+                    <img class="imgEmojis" src="img/emojis/003.svg" />
+                  </a>
+                  <a
+                    href="#"
+                    data-emoji="img/emojis/004.svg"
+                    onclick="getEmoji(this)"
+                  >
+                    <img class="imgEmojis" src="img/emojis/004.svg" />
+                  </a>
+                  <a
+                    href="#"
+                    data-emoji="img/emojis/005.svg"
+                    onclick="getEmoji(this)"
+                  >
+                    <img class="imgEmojis" src="img/emojis/005.svg" />
+                  </a>
+                  <a
+                    href="#"
+                    data-emoji="img/emojis/006.svg"
+                    onclick="getEmoji(this)"
+                  >
+                    <img class="imgEmojis" src="img/emojis/006.svg" />
+                  </a>
+                  <a
+                    href="#"
+                    data-emoji="img/emojis/007.svg"
+                    onclick="getEmoji(this)"
+                  >
+                    <img class="imgEmojis" src="img/emojis/007.svg" />
+                  </a>
+                  <a
+                    href="#"
+                    data-emoji="img/emojis/008.svg"
+                    onclick="getEmoji(this)"
+                  >
+                    <img class="imgEmojis" src="img/emojis/008.svg" />
+                  </a>
+                  <a
+                    href="#"
+                    data-emoji="img/emojis/009.svg"
+                    onclick="getEmoji(this)"
+                  >
+                    <img class="imgEmojis" src="img/emojis/009.svg" />
+                  </a>
+                  <a
+                    href="#"
+                    data-emoji="img/emojis/010.svg"
+                    onclick="getEmoji(this)"
+                  >
+                    <img class="imgEmojis" src="img/emojis/010.svg" />
+                  </a>
+                  <a
+                    href="#"
+                    data-emoji="img/emojis/011.svg"
+                    onclick="getEmoji(this)"
+                  >
+                    <img class="imgEmojis" src="img/emojis/011.svg" />
+                  </a>
+                  <a
+                    href="#"
+                    data-emoji="img/emojis/012.svg"
+                    onclick="getEmoji(this)"
+                  >
+                    <img class="imgEmojis" src="img/emojis/012.svg" />
+                  </a>
+                  <a
+                    href="#"
+                    data-emoji="img/emojis/013.svg"
+                    onclick="getEmoji(this)"
+                  >
+                    <img class="imgEmojis" src="img/emojis/013.svg" />
+                  </a>
+                  <a
+                    href="#"
+                    data-emoji="img/emojis/014.svg"
+                    onclick="getEmoji(this)"
+                  >
+                    <img class="imgEmojis" src="img/emojis/014.svg" />
+                  </a>
+                  <a
+                    href="#"
+                    data-emoji="img/emojis/015.svg"
+                    onclick="getEmoji(this)"
+                  >
+                    <img class="imgEmojis" src="img/emojis/015.svg" />
+                  </a>
+                  <a
+                    href="#"
+                    data-emoji="img/emojis/016.svg"
+                    onclick="getEmoji(this)"
+                  >
+                    <img class="imgEmojis" src="img/emojis/016.svg" />
+                  </a>
+                  <a
+                    href="#"
+                    data-emoji="img/emojis/017.svg"
+                    onclick="getEmoji(this)"
+                  >
+                    <img class="imgEmojis" src="img/emojis/017.svg" />
+                  </a>
+                  <a
+                    href="#"
+                    data-emoji="img/emojis/018.svg"
+                    onclick="getEmoji(this)"
+                  >
+                    <img class="imgEmojis" src="img/emojis/018.svg" />
+                  </a>
+                  <a
+                    href="#"
+                    data-emoji="img/emojis/019.svg"
+                    onclick="getEmoji(this)"
+                  >
+                    <img class="imgEmojis" src="img/emojis/019.svg" />
+                  </a>
+                  <a
+                    href="#"
+                    data-emoji="img/emojis/020.svg"
+                    onclick="getEmoji(this)"
+                  >
+                    <img class="imgEmojis" src="img/emojis/020.svg" />
+                  </a>
+                  <a
+                    href="#"
+                    data-emoji="img/emojis/021.svg"
+                    onclick="getEmoji(this)"
+                  >
+                    <img class="imgEmojis" src="img/emojis/021.svg" />
+                  </a>
+                  <a
+                    href="#"
+                    data-emoji="img/emojis/022.svg"
+                    onclick="getEmoji(this)"
+                  >
+                    <img class="imgEmojis" src="img/emojis/022.svg" />
+                  </a>
+                  <a
+                    href="#"
+                    data-emoji="img/emojis/023.svg"
+                    onclick="getEmoji(this)"
+                  >
+                    <img class="imgEmojis" src="img/emojis/023.svg" />
+                  </a>
+                  <a
+                    href="#"
+                    data-emoji="img/emojis/024.svg"
+                    onclick="getEmoji(this)"
+                  >
+                    <img class="imgEmojis" src="img/emojis/024.svg" />
+                  </a>
+                  <a
+                    href="#"
+                    data-emoji="img/emojis/025.svg"
+                    onclick="getEmoji(this)"
+                  >
+                    <img class="imgEmojis" src="img/emojis/025.svg" />
+                  </a>
+                  <a
+                    href="#"
+                    data-emoji="img/emojis/026.svg"
+                    onclick="getEmoji(this)"
+                  >
+                    <img class="imgEmojis" src="img/emojis/026.svg" />
+                  </a>
+                  <a
+                    href="#"
+                    data-emoji="img/emojis/027.svg"
+                    onclick="getEmoji(this)"
+                  >
+                    <img class="imgEmojis" src="img/emojis/027.svg" />
+                  </a>
+                  <a
+                    href="#"
+                    data-emoji="img/emojis/028.svg"
+                    onclick="getEmoji(this)"
+                  >
+                    <img class="imgEmojis" src="img/emojis/028.svg" />
+                  </a>
+                  <a
+                    href="#"
+                    data-emoji="img/emojis/029.svg"
+                    onclick="getEmoji(this)"
+                  >
+                    <img class="imgEmojis" src="img/emojis/029.svg" />
+                  </a>
+                  <a
+                    href="#"
+                    data-emoji="img/emojis/030.svg"
+                    onclick="getEmoji(this)"
+                  >
+                    <img class="imgEmojis" src="img/emojis/030.svg" />
+                  </a>
+                  <a
+                    href="#"
+                    data-emoji="img/emojis/031.svg"
+                    onclick="getEmoji(this)"
+                  >
+                    <img class="imgEmojis" src="img/emojis/031.svg" />
+                  </a>
+                  <a
+                    href="#"
+                    data-emoji="img/emojis/032.svg"
+                    onclick="getEmoji(this)"
+                  >
+                    <img class="imgEmojis" src="img/emojis/032.svg" />
+                  </a>
+                  <a
+                    href="#"
+                    data-emoji="img/emojis/033.svg"
+                    onclick="getEmoji(this)"
+                  >
+                    <img class="imgEmojis" src="img/emojis/033.svg" />
+                  </a>
+                  <a
+                    href="#"
+                    data-emoji="img/emojis/034.svg"
+                    onclick="getEmoji(this)"
+                  >
+                    <img class="imgEmojis" src="img/emojis/034.svg" />
+                  </a>
+                  <a
+                    href="#"
+                    data-emoji="img/emojis/035.svg"
+                    onclick="getEmoji(this)"
+                  >
+                    <img class="imgEmojis" src="img/emojis/035.svg" />
+                  </a>
+                  <a
+                    href="#"
+                    data-emoji="img/emojis/036.svg"
+                    onclick="getEmoji(this)"
+                  >
+                    <img class="imgEmojis" src="img/emojis/036.svg" />
+                  </a>
+                  <a
+                    href="#"
+                    data-emoji="img/emojis/037.svg"
+                    onclick="getEmoji(this)"
+                  >
+                    <img class="imgEmojis" src="img/emojis/037.svg" />
+                  </a>
+                  <a
+                    href="#"
+                    data-emoji="img/emojis/038.svg"
+                    onclick="getEmoji(this)"
+                  >
+                    <img class="imgEmojis" src="img/emojis/038.svg" />
+                  </a>
+                  <a
+                    href="#"
+                    data-emoji="img/emojis/039.svg"
+                    onclick="getEmoji(this)"
+                  >
+                    <img class="imgEmojis" src="img/emojis/039.svg" />
+                  </a>
+                  <a
+                    href="#"
+                    data-emoji="img/emojis/040.svg"
+                    onclick="getEmoji(this)"
+                  >
+                    <img class="imgEmojis" src="img/emojis/040.svg" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <canvas id="cHidden" hidden="true"></canvas>
+    <input id="minScale" type="hidden" value="0.5" />
+
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+      <div
+        class="btn-group btn-group-justified"
+        style="height: 100%; float: left"
+      >
+        <a
+          style="font-size: 2.6vmin; width: 30%"
+          onclick="BtnAnterior();"
+          class="btn"
+        >
+          <span id="flechaAnterior" class="fa fa-arrow-left"></span>
+          Atras
+        </a>
+        <a
+          style="font-size: 2.6vmin; width: 70%; border: 1px solid #25d8fc"
+          onclick="BtnSiguiente();"
+          class="btn btn-info"
+          id="next"
+        >
+          Siguiente
+          <span id="flechaSiguiente" class="fa fa-arrow-right"></span>
+        </a>
+      </div>
+    </nav>
+  </body>
+
+  <script>
+    var chocolateEscogido = "";
+    var canvas = new fabric.Canvas("c");
+    canvas.setHeight($("#divContenedorChocolate").height());
+    canvas.setWidth($("#divContenedorChocolate").width());
+    //canvas.selection = false;
+
+    $(window).resize(function () {
+      canvas.setHeight($("#divContenedorChocolate").height());
+      canvas.setWidth($("#divContenedorChocolate").width());
+
+      if (!chocolateEscogido == "") {
+        cambiarColor();
+      }
+      var contenedor = $("#divContenedorChocolate").width();
+      var scaleActual = $("#minScale").val();
+      var calculo = (contenedor * scaleActual) / 576;
+      $("#minScale").val(calculo);
+    });
+
+    //*******************************************************//
+    //*******************************************************//
+    //*******************************************************//
+    //*******************************************************//
+    //*******************************************************//
+
+    fabric.Object.prototype.minScaleLimit = 0.1;
+    fabric.Object.prototype.setControlsVisibility({
+      ml: false,
+      mr: false,
+      mt: false,
+    });
+
+    fabric.Canvas.prototype.customiseControls({
+      mb: {
+        action: "remove",
+        cursor: "pointer",
+      },
+    });
+    fabric.Object.prototype.customiseCornerIcons(
+      {
+        settings: {
+          borderColor: "#26d8fc",
+          cornerSize: 25,
+          cornerShape: "circle",
+          cornerBackgroundColor: "#03c5ec",
+        },
+        mtr: {
+          icon: "img/icons/rotate.svg",
+          settings: {
+            cornerPadding: 7,
+          },
+        },
+        mb: {
+          icon: "img/icons/remove.svg",
+          settings: {
+            cornerShape: "circle",
+            cornerBackgroundColor: "#ec2a03",
+            cornerPadding: 7,
+          },
+        },
+      },
+      function () {
+        canvas.renderAll();
+      }
+    );
+
+    canvas.on("object:selected", function (e) {
+      if (
+        e.target.get("type") === "i-text" ||
+        e.target.get("type") === "text"
+      ) {
+        $("#textoInsertado").prop("disabled", false);
+        $("#textoInsertado").val(e.target.getText());
+      } else {
+        $("#textoInsertado").prop("disabled", true);
+        $("#textoInsertado").val("");
+      }
+    });
+    canvas.on("selection:cleared", function (e) {
+      $("#textoInsertado").prop("disabled", true);
+      $("#textoInsertado").val("");
+    });
+    $("#textoInsertado").keyup(function () {
+      canvas.getActiveObject().setText($("#textoInsertado").val());
+      canvas.renderAll();
+    });
+  </script>
+  <!-- Required JavaScript Libraries -->
+  <script src="lib/superfish/hoverIntent.js"></script>
+  <script src="lib/superfish/superfish.min.js"></script>
+  <script src="lib/morphext/morphext.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/stickyjs/sticky.js"></script>
+  <script src="lib/easing/easing.js"></script>
+
+  <!-- Template Specisifc Custom Javascript File -->
+  <script src="js/custom.js"></script>
+</html>

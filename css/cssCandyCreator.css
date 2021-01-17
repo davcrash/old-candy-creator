@@ -1,0 +1,134 @@
+html,
+body {
+  height: 100%;
+}
+body {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.centrado {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+}
+
+/*Estilo del canvas de la chocolatina*/
+#divContenedorChocolate {
+  width: 96vmin !important;
+  height: 48vmin !important;
+  border: solid 1px;
+  /*   margin-top: 14%;
+        margin-bottom: 14%;*/
+}
+/*-------------------------------------------*/
+div.scrollmenu {
+  overflow: auto;
+}
+
+div.scrollmenu a {
+  display: inline-block;
+  text-align: center;
+  padding: 3vmin;
+  text-decoration: none;
+}
+
+div.scrollmenu a:hover {
+  border-radius: 50%;
+  background-color: #a1a1a1;
+  -webkit-transition: 0.25s; /* Safari */
+  transition: 0.25s;
+}
+div.scrollmenu a:hover img {
+  filter: invert(100%);
+}
+div.scrollmenu a:active {
+  background-color: #b1cde4;
+  border-radius: 35%;
+  -webkit-transition: 0.17s; /* Safari */
+  transition: 0.17s;
+}
+
+.imgEmojis {
+  height: 7vmin;
+  width: 7vmin;
+}
+
+div.selectchoco a {
+  display: inline-block;
+  text-align: center;
+  color: black;
+  padding: 0.5vmin;
+  padding-top: 2vmin;
+  margin-right: 2vmin;
+  margin-left: 2vmin;
+  text-decoration: none;
+}
+div.selectchoco a img {
+  width: 22vmin;
+  height: 12vmin;
+}
+div.selectchoco a:hover {
+  background-color: #e6e6e6;
+  -webkit-transition: 0.25s; /* Safari */
+  transition: 0.25s;
+}
+
+div.selectchoco a:active {
+  background-color: #b1cde4;
+  -webkit-transition: 0.17s; /* Safari */
+  transition: 0.17s;
+}
+div.scroll {
+  overflow: auto;
+  white-space: nowrap;
+}
+/*#tituloPaso{
+    opacity: 1 !important;
+    background-color: #102D3D !important;
+    border-color: #0b1e29 !important;
+}*/
+.btn-info {
+  background-color: #03c5ec;
+  border: 0;
+  border-radius: 0;
+  padding: 10px 24px;
+  color: #fff;
+  transition: 0.4s;
+}
+.btn-info:hover {
+  background: #25d8fc;
+}
+.pulse-button {
+  border: none;
+  box-shadow: 0 0 0 0 rgba(15, 85, 99, 0.7);
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  -moz-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  -ms-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+@-webkit-keyframes pulse {
+  to {
+    box-shadow: 0 0 0 45px rgba(15, 85, 99, 0);
+  }
+}
+@-moz-keyframes pulse {
+  to {
+    box-shadow: 0 0 0 45px rgba(15, 85, 99, 0);
+  }
+}
+@-ms-keyframes pulse {
+  to {
+    box-shadow: 0 0 0 45px rgba(15, 85, 99, 0);
+  }
+}
+@keyframes pulse {
+  to {
+    box-shadow: 0 0 0 45px rgba(15, 85, 99, 0);
+  }
+}

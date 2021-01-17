@@ -1,0 +1,28 @@
+@font-face {
+    font-family: 'rocko';
+    src: url('../font/fredokaone-regular-webfont.woff2') format('woff2'),
+         url('../font/fredokaone-regular-webfont.woff') format('woff');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'fredoka';
+    src: url('../font/comfortaa-bold-webfont.woff2') format('woff2'),
+         url('../font/comfortaa-bold-webfont.woff') format('woff');
+    font-weight: bold;
+
+}
+@font-face {
+    font-family: 'fredoka';
+    src: url('../font/comfortaa-regular-webfont.woff2') format('woff2'),
+         url('../font/comfortaa-regular-webfont.woff') format('woff');
+    font-weight: normal;
+
+}
+
+body{
+    font-family: 'fredoka' !important;
+}
+canvas{
+    font-family: 'rocko' !important;
+}
