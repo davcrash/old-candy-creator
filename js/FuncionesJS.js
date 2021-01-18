@@ -236,7 +236,7 @@ function BtnSiguiente() {
     if (canvas.item(0) === undefined) {
       swal(
         {
-          title: "¡Tu ChoCard está vacía!",
+          title: "¡Tu Chocolatina está vacía!",
           text: "¿Deseas continuar con la compra?",
           type: "warning",
           showCancelButton: true,
@@ -326,7 +326,7 @@ function Presubmit() {
   } else if ($("#nombreEnvia").val() == "") {
     MostrarAlerta(
       "Opps...",
-      "¡Debes escribir el nombre de quien envía la ChoCard!",
+      "¡Debes escribir el nombre de quien envía la Chocolatina!",
       "error",
       "¡Entendido!"
     );
@@ -334,7 +334,7 @@ function Presubmit() {
   } else if ($("#nombreRecibe").val() == "") {
     MostrarAlerta(
       "Opps...",
-      "¡Debes escribir el nombre de quien recibe la ChoCard!",
+      "¡Debes escribir el nombre de quien recibe la Chocolatina!",
       "error",
       "¡Entendido!"
     );
@@ -342,7 +342,7 @@ function Presubmit() {
   } else if ($("#fecha").val() == "") {
     MostrarAlerta(
       "Opps...",
-      "¡Debes escoger la fecha y hora de entrega de la ChoCard!",
+      "¡Debes escoger la fecha y hora de entrega de la Chocolatina!",
       "error",
       "¡Entendido!"
     );
@@ -350,7 +350,7 @@ function Presubmit() {
   } else if (diferenciaHoras < 36) {
     MostrarAlerta(
       "Opps...",
-      "Lo sentimos ¡Debemos contar con 36 horas de anticipación para preparar la ChoCard el día y a la hora que quieres!",
+      "Lo sentimos ¡Debemos contar con 36 horas de anticipación para preparar la Chocolatina el día y a la hora que quieres!",
       "error",
       "¡Entendido!"
     );
@@ -366,7 +366,7 @@ function Presubmit() {
   } else if ($("#barrio").val() == "") {
     MostrarAlerta(
       "Opps...",
-      "¡Debes escribir la Dirección de entrega de la ChoCard!",
+      "¡Debes escribir la Dirección de entrega de la Chocolatina!",
       "error",
       "¡Entendido!"
     );
@@ -374,7 +374,7 @@ function Presubmit() {
   } else if ($("#direccion").val() == "") {
     MostrarAlerta(
       "Opps...",
-      "¡Debes escribir el nombre del barrio y/o indicaciones para entrega de la ChoCard!",
+      "¡Debes escribir el nombre del barrio y/o indicaciones para entrega de la Chocolatina!",
       "error",
       "¡Entendido!"
     );
