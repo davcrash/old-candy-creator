@@ -251,8 +251,17 @@ function BtnSiguiente() {
         }
       );
     } else {
-      //Mostramos el dialogo de pedido
-      $("#ModalPedido").modal();
+      swal(
+        {
+          title: "¡Gracias por editar tu Chocolatina!",
+          confirmButtonText: "Ok",
+          closeOnConfirm: true,
+        },
+        function () {
+          //Mostramos el dialogo de pedido
+          $("#ModalPedido").modal();
+        }
+      );
     }
   }
 }
