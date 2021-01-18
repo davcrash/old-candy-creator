@@ -211,7 +211,6 @@ function BtnSiguiente() {
     to: "fa-arrow-rigth",
     animation: "rubberBand",
   };
-  iconate(iconElement, options);
   if ($("#color").is(":visible")) {
     if ($("#c").is(":visible")) {
       //Mostramos los emojis
@@ -272,7 +271,6 @@ function BtnAnterior() {
     to: "fa-arrow-left",
     animation: "rubberBand",
   };
-  iconate(iconElement, options);
   if ($("#diseños").is(":visible")) {
     //Mostramos los colores de chocolatina
     $("#diseños").hide();
