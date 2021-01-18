@@ -10,7 +10,6 @@ $(document).ready(function () {
     //Reload the page
     location.reload(true);
   }
-  tippy(".btn");
 
   $("#diseños").hide();
   $("#emojis").hide();
